@@ -205,12 +205,14 @@ const logout = async (req, res) => {
   // On client, also delete the accessToken
   const cookies = req.cookies;
   if (!cookies?.jwt) {
-    res.clearCookie('jwt', { httpOnly: true, sameSite: 'None', secure: true });
+    res.clearCookie('jwt', { httpOnly: true, sameSite: 'lax', secure: true });
     return res.status(204).json({
       message: 'The refreshToken is successfully cleared',
       success: false,
     });
   }
+
+  const foundUser = await User.findById(req.body.id)
 
   // update user status & updateAt time
   await User.findByIdAndUpdate(
@@ -221,7 +223,6 @@ const logout = async (req, res) => {
 
   res.clearCookie('jwt', { httpOnly: true, sameSite: 'lax', });
   res.status(200).json({
-    data,
     message: 'Cookie cleared',
     success: true,
   });

@@ -23,7 +23,7 @@ router
 
   router.route("/reset").post(authController.resetPassword);
 
-  router.route("/logout").delete(authController.logout);
+  router.route("/remove").delete(authController.logout);
 
 
   module.exports = router;

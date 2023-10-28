@@ -29,6 +29,5 @@ router
 
 router.route("/get").get(ensuredAuthenticated, categoryController.getAll);
 
-router.route("/get/:id").get(ensuredAuthenticated, categoryController.getOne);
 
 module.exports = router;

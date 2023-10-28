@@ -10,7 +10,7 @@ const addOne = async (req, res) => {
     });
     await newRecord.save();
     return res.status(201).json({
-      message: "Item successfully created",
+      message: "Category successfully created",
       success: true,
     });
   } catch (err) {
@@ -25,7 +25,7 @@ const updateOne = async (req, res) => {
   try {
     await Category.findByIdAndUpdate(req.params.id, req.body);
     return res.status(201).json({
-      message: "Item successfully updated",
+      message: "Category successfully updated",
       success: true,
     });
   } catch (err) {
@@ -55,7 +55,7 @@ const getAll = async (req, res) => {
       pageCount,
       itemCount,
       currentPage: req.query.page,
-      pages: paginate.getArrayPages(req)(3, pageCount, req.query.page),
+      // pages: paginate.getArrayPages(req)(3, pageCount, req.query.page),
     });
   } catch (err) {
     return res.status(500).json({
@@ -65,23 +65,6 @@ const getAll = async (req, res) => {
   }
 };
 
-const getOne = async (req, res) => {
-  try {
-    const item = await Category.findById(req.params.id);
-    if (item) {
-      return res.status(200).json(item);
-    }
-    return res.status(404).json({
-      message: "Item not found",
-      success: false,
-    });
-  } catch (err) {
-    return res.status(500).json({
-      message: err.message,
-      success: false,
-    });
-  }
-};
 const removeOne = async (req, res) => {
   try {
     const deleted = await Category.findByIdAndDelete(req.params.id);
@@ -91,8 +74,8 @@ const removeOne = async (req, res) => {
         success: false,
       });
     }
-    return res.status(204).json({
-      message: "Item successfully deleted",
+    return res.status(200).json({
+      message: "Category successfully deleted",
       success: true,
     });
   } catch (err) {
@@ -108,5 +91,4 @@ module.exports = {
   removeOne,
   updateOne,
   getAll,
-  getOne,
 };
