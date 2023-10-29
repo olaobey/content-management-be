@@ -48,7 +48,7 @@ If you'd like to contribute to the Project Name, follow these steps:
 
 ## **Base_Url**
 
-[BASE_URL](https://blogging-api-1a6x.onrender.com/api/v1)
+[BASE_URL](https://content-management-be.onrender.com/api/v1)
 
 ### **Authentication**
 
