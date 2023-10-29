@@ -1,5 +1,8 @@
 # content-management-be
 A RESTful API for content management to perform CRUD operation on post with category and user profile. The API supports user authentication and authorization, enabling users to create and manage their own posts.
+Content Management project is a comprehensive platform that empowers users with essential features for managing their content seamlessly. Users can easily register, login, and access a convenient "forgot password" option for account recovery. The system also provides functionalities to retrieve all user profiles, access specific user profiles by ID, and reset passwords for enhanced security.
+
+In addition to user management, this project equips users with the ability to create, edit, delete, and update posts, ensuring the effortless organization and customization of their content. Furthermore, users can effortlessly create, edit, delete, and update categories, enabling them to efficiently categorize and manage their content according to their preferences.
 
 ## **Getting Started**
 
@@ -28,7 +31,7 @@ following environment variables:
 - NODE_ENV= **`stage of the project`**
 
 4. Run **`npm install`** to install the required packages.
-5. The API server will start running on http://localhost:3000. You can now send HTTP requests to the API endpoints.
+5. The API server will start running on http://localhost:5000. You can now send HTTP requests to the API endpoints.
 
 ## **Running**
 
@@ -48,7 +51,7 @@ If you'd like to contribute to the Project Name, follow these steps:
 
 ## **Base_Url**
 
-[BASE_URL](https://content-management-be.onrender.com/api/v1)
+[BASE_URL](https://content-management-be.onrender.com)
 
 ### **Authentication**
 
